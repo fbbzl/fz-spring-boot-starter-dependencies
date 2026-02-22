@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.fbbzl</groupId>
+    <artifactId>fz-spring-boot-starter-dependencies</artifactId>
+    <version>${reversion}</version>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>contain all fz-spring-boot-starter dependencies bom file</description>
+    <url>https://github.com/fbbzl/fz-spring-boot-starter-dependencies</url>
+
+    <developers>
+        <developer>
+            <name>fengbinbin</name>
+            <email>290361638@qq.com</email>
+            <organization>https://github.com/fbbzl</organization>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/fbbzl/fz-spring-boot-starter-dependencies</url>
+        <connection>scm:git@github.com:fbbzl/fz-spring-boot-starter-dependencies.git</connection>
+        <developerConnection>scm:git@github.com:fbbzl/fz-spring-boot-starter-dependencies.git</developerConnection>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <reversion>3.5.10</reversion>
+
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <spring.boot.version>${reversion}</spring.boot.version>
+
+        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-gpg-plugin-version>3.2.8</maven-gpg-plugin-version>
+        <maven-deploy-plugin-version>3.1.4</maven-deploy-plugin-version>
+        <nexus-staging-maven-plugin-version>1.7.0</nexus-staging-maven-plugin-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-core</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-dal</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-generator</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-jpa</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-mybatis-plus</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-openapi</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-pojo</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-web</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://ossrh-staging-api.central.sonatype.com/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>${nexus-staging-maven-plugin-version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://ossrh-staging-api.central.sonatype.com/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven-gpg-plugin-version}</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin-version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
