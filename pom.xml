@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <fz-version>1.0.3</fz-version>
+        <fz-version>1.0.4</fz-version>
         <reversion>${fz-version}_${spring-boot.version}</reversion>
 
         <java.version>21</java.version>
