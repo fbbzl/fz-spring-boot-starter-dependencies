@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <fz.version>1.1.5</fz.version>
+        <fz.version>1.2.5</fz.version>
         <revision>${fz.version}_${spring-boot.version}</revision>
 
         <java.version>21</java.version>
@@ -87,6 +87,12 @@
 
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-messages</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
                 <artifactId>fz-spring-boot-starter-mybatis-plus</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -100,6 +106,12 @@
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
                 <artifactId>fz-spring-boot-starter-pojo</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-shiro</artifactId>
                 <version>${revision}</version>
             </dependency>
 
