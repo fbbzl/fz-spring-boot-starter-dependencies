@@ -120,6 +120,12 @@
                 <artifactId>fz-spring-boot-starter-web</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-audit</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
