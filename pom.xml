@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <fz.version>1.2.6</fz.version>
+        <fz.version>1.2.7</fz.version>
         <revision>${fz.version}_${spring-boot.version}</revision>
 
         <java.version>21</java.version>
@@ -63,6 +63,18 @@
 
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-audit</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-auth</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
                 <artifactId>fz-spring-boot-starter-core</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -70,6 +82,12 @@
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
                 <artifactId>fz-spring-boot-starter-dal</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.fbbzl</groupId>
+                <artifactId>fz-spring-boot-starter-dict</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -87,7 +105,7 @@
 
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
-                <artifactId>fz-spring-boot-starter-messages</artifactId>
+                <artifactId>fz-spring-boot-starter-message</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -111,7 +129,7 @@
 
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
-                <artifactId>fz-spring-boot-starter-shiro</artifactId>
+                <artifactId>fz-spring-boot-starter-rbac</artifactId>
                 <version>${revision}</version>
             </dependency>
 
