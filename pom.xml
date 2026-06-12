@@ -131,6 +131,7 @@
             <dependency>
                 <groupId>io.github.fbbzl</groupId>
                 <artifactId>fz-spring-boot-starter-redisson</artifactId>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
