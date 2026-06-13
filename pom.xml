@@ -43,7 +43,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring-boot.version>3.5.13</spring-boot.version>
+        <spring-boot.version>3.5.15</spring-boot.version>
 
         <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
